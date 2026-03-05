@@ -1,0 +1,181 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    background-color: var(--neutral-900);
+}
+
+.heroSkeleton {
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    background-color: var(--neutral-100);
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    z-index: 1;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(255, 255, 255, 0.8) 40%,
+            rgba(255, 255, 255, 0.2) 100%);
+}
+
+.contentContainer {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.contentCol {
+    max-width: 600px;
+    padding-top: 80px;
+    /* Offset for navbar */
+    animation: slideInLeft 0.8s ease backwards;
+}
+
+.pillBadge {
+    margin-bottom: var(--space-6);
+    display: inline-flex;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--brand-primary);
+    animation: pulse-glow 2s infinite;
+}
+
+.headline {
+    font-size: 56px;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: var(--space-6);
+    color: var(--neutral-900);
+}
+
+.sub {
+    font-size: 18px;
+    color: var(--neutral-600);
+    margin-bottom: var(--space-8);
+    max-width: 480px;
+}
+
+.ctas {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    color: var(--neutral-900);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    opacity: 0;
+}
+
+.hero:hover .navButton {
+    opacity: 1;
+}
+
+.navButton:hover {
+    background: var(--neutral-0);
+    color: var(--brand-primary);
+    box-shadow: var(--shadow-md);
+}
+
+.prevButton {
+    left: var(--space-6);
+}
+
+.nextButton {
+    right: var(--space-6);
+}
+
+.indicators {
+    position: absolute;
+    bottom: var(--space-8);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--space-2);
+    z-index: 10;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    padding: 0;
+    transition: all var(--transition-base);
+}
+
+.indicator:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.indicator.activeIndicator {
+    background: var(--brand-primary);
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .overlay {
+        background: linear-gradient(to top,
+                rgba(255, 255, 255, 0.95) 0%,
+                rgba(255, 255, 255, 0.8) 60%,
+                rgba(255, 255, 255, 0.4) 100%);
+    }
+
+    .headline {
+        font-size: 40px;
+    }
+
+    .contentCol {
+        padding-top: 40px;
+    }
+
+    .navButton {
+        display: none;
+    }
+}

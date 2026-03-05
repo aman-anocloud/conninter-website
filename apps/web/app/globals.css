@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
 /* ============================================
    DESIGN TOKENS
@@ -50,8 +50,8 @@
   --glass-blur: blur(20px);
 
   /* Typography */
-  --font-primary: 'Outfit', 'Inter', sans-serif;
-  --font-secondary: 'Inter', sans-serif;
+  --font-primary: 'Montserrat', sans-serif;
+  --font-secondary: 'Montserrat', sans-serif;
 
   /* Spacing */
   --space-1: 4px;
@@ -99,11 +99,17 @@ html {
 }
 
 body {
-  font-family: var(--font-primary);
+  font-family: var(--font-secondary);
+  font-weight: 300;
   background-color: var(--neutral-0);
   color: var(--neutral-900);
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .headline, .heading {
+  font-family: var(--font-primary);
+  font-weight: 700;
 }
 
 a {
@@ -494,4 +500,16 @@ select {
 
 .animate-reveal:nth-child(6) {
   transition-delay: 0.40s;
+}
+
+/* Card Hover Effect */
+.card-hover-effect {
+  border: 1px solid var(--neutral-200);
+  transition: all 0.3s ease;
+}
+
+.card-hover-effect:hover {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px #006677; /* Deep green + deep blue mixture */
+  transform: translateY(-4px);
 }

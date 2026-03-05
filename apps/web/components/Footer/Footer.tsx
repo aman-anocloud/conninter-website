@@ -11,11 +11,10 @@ export default function Footer() {
                         <Image
                             src="/logo.png"
                             alt="Conninter Logo"
-                            width={36}
-                            height={36}
+                            width={240}
+                            height={78}
                             style={{ objectFit: 'contain' }}
                         />
-                        <span className={styles.logoName}>Conninter</span>
                     </Link>
                     <p className={styles.tagline}>
                         The unified healthcare coordination platform connecting hospitals, distributors, and medical representatives.

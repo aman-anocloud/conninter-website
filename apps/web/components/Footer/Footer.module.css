@@ -35,6 +35,13 @@
     letter-spacing: -0.3px;
 }
 
+.ciSpan {
+    font-size: 28px;
+    font-weight: 900;
+    color: #003399;
+    letter-spacing: -1px;
+}
+
 .tagline {
     font-size: 14px;
     color: var(--neutral-500);

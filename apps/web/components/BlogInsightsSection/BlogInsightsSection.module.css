@@ -1,0 +1,146 @@
+.section {
+    padding: var(--space-20) 0;
+    background-color: var(--neutral-50);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.headerText {
+    max-width: 600px;
+}
+
+.title {
+    font-size: 40px;
+    color: var(--neutral-900);
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.5px;
+}
+
+.description {
+    font-size: 18px;
+    color: var(--neutral-600);
+    line-height: 1.6;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+}
+
+.card {
+    background: var(--neutral-0);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 240px;
+}
+
+.categoryBadge {
+    position: absolute;
+    top: var(--space-4);
+    left: var(--space-4);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(4px);
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--brand-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.content {
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--neutral-500);
+    margin-bottom: var(--space-3);
+    font-weight: 500;
+}
+
+.dot {
+    color: var(--neutral-300);
+}
+
+.cardTitle {
+    font-size: 20px;
+    color: var(--neutral-900);
+    margin-bottom: var(--space-3);
+    line-height: 1.4;
+    transition: color var(--transition-base);
+}
+
+.card:hover .cardTitle {
+    color: var(--brand-primary);
+}
+
+.cardExcerpt {
+    color: var(--neutral-600);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: var(--space-6);
+    flex-grow: 1;
+}
+
+.readMore {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--brand-primary);
+    transition: gap var(--transition-base);
+}
+
+.card:hover .readMore {
+    gap: 12px;
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-6);
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+}

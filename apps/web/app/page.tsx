@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Navbar from '@/components/Navbar/Navbar';
-import Hero from '@/components/Hero/Hero';
+import HeroSlider from '@/components/HeroSlider/HeroSlider';
 import StatsBar from '@/components/StatsBar/StatsBar';
 import AboutSection from '@/components/AboutSection/AboutSection';
 import Departments from '@/components/Departments/Departments';
@@ -13,6 +13,9 @@ import MinimalBlogList from '@/components/MinimalBlogList/MinimalBlogList';
 import NewsletterStrip from '@/components/NewsletterStrip/NewsletterStrip';
 import AppBanner from '@/components/AppBanner/AppBanner';
 import Footer from '@/components/Footer/Footer';
+import ChooseGateway from '@/components/ChooseGateway/ChooseGateway';
+import PartnersSection from '@/components/PartnersSection/PartnersSection';
+import BlogInsightsSection from '@/components/BlogInsightsSection/BlogInsightsSection';
 
 export const metadata: Metadata = {
     title: 'Conninter – Clinic & Hospital Management Platform',
@@ -31,15 +34,18 @@ export default function HomePage() {
             <Navbar />
             <main>
                 {/* 1. Hero */}
-                <Hero />
+                <HeroSlider />
 
                 {/* 2. Stats strip with count-up animation on scroll */}
                 <StatsBar />
 
-                {/* 3. About – Two-column story + feature cards with SVG icons */}
+                {/* 3. Choose Your Gateway */}
+                <ChooseGateway />
+
+                {/* 4. About – Two-column story + feature cards with SVG icons */}
                 <AboutSection />
 
-                {/* 4. Departments – VMS, DMS, Emergency, Directory, Pro Network, Analytics */}
+                {/* 5. Departments – VMS, DMS, Emergency, Directory, Pro Network, Analytics */}
                 <Departments />
 
                 {/* 5. Featured Services – 3 service cards + 6 mini chips */}
@@ -57,10 +63,13 @@ export default function HomePage() {
                 {/* 9. Emergency CTA – Full-width blue gradient, two-column */}
                 <EmergencyCTA />
 
-                {/* 10. Blog – Recent healthcare articles */}
-                <MinimalBlogList />
+                {/* 10. Partners Section */}
+                <PartnersSection />
 
-                {/* 11. Newsletter Strip – Email subscription */}
+                {/* 11. Custom Blog Insights Section */}
+                <BlogInsightsSection />
+
+                {/* 12. Newsletter Strip – Email subscription */}
                 <NewsletterStrip />
 
                 {/* 12. App / WhatsApp Banner */}
