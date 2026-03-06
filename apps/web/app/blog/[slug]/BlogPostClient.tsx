@@ -1,9 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { PortableText } from '@portabletext/react';
+import { RichTextComponents } from '@/components/RichTextComponents';
 import styles from './page.module.css';
 
 interface BlogPostClientProps {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     post: any;
 }
 
@@ -23,13 +26,13 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                 transition={{ duration: 0.5 }}
             >
                 <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: 'var(--space-4)', justifyContent: 'center' }}>
-                    <div className="badge badge-purple">{post.category}</div>
+                    {post.category && <div className="badge badge-purple">{post.category}</div>}
                     {post.readTime && <div className="badge" style={{ background: 'var(--glass-bg)', color: 'var(--neutral-300)' }}>⏱ {post.readTime}</div>}
                 </div>
                 <h1 className={styles.title}>{post.title}</h1>
                 <div className={styles.meta} style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
                     {post.author && <span style={{ color: 'var(--brand-primary)', fontWeight: 600 }}>By {post.author}</span>}
-                    <span>Published on {new Date(post.publishedAt).toLocaleDateString()}</span>
+                    {post.publishedAt && <span>Published on {new Date(post.publishedAt).toLocaleDateString()}</span>}
                 </div>
             </motion.header>
 
@@ -41,18 +44,23 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                     variants={fadeIn}
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={post.coverImage} alt={post.title} className={styles.coverImage} />
                 </motion.div>
             )}
 
             <motion.div
                 className={styles.content}
-                dangerouslySetInnerHTML={{ __html: post.content }}
                 initial="hidden"
                 animate="visible"
                 variants={fadeIn}
                 transition={{ duration: 0.5, delay: 0.4 }}
-            />
+            >
+                <PortableText
+                    value={post.body}
+                    components={RichTextComponents}
+                />
+            </motion.div>
 
             {post.tags && post.tags.length > 0 && (
                 <motion.div

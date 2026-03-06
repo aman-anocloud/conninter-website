@@ -25,7 +25,7 @@ const partners = [
     },
     {
         name: 'Global Medical Devices',
-        logo: 'https://images.unsplash.com/photo-1542736667-069246b59e40?w=128&h=128&fit=crop&auto=format',
+        logo: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=128&h=128&fit=crop&auto=format',
         description: 'Standardizing equipment procurement processes.',
         type: 'Manufacturing',
         role: 'Supply Partner'

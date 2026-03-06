@@ -17,7 +17,7 @@ const insights = [
         excerpt: 'How to maximize your doctor visits through efficient scheduling platforms and follow-up tools.',
         category: 'Best Practices',
         date: 'Nov 04, 2023',
-        image: 'https://images.unsplash.com/photo-1576091160550-2173ff9e5fe3?q=80&w=2070&auto=format&fit=crop',
+        image: 'https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=1033&auto=format&fit=crop',
         readTime: '7 min read',
         slug: '/blog/med-rep-best-practices'
     },

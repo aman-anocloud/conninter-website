@@ -9,7 +9,6 @@ import DoctorsDirectory from '@/components/DoctorsDirectory/DoctorsDirectory';
 import WhyChooseUs from '@/components/WhyChooseUs/WhyChooseUs';
 import HospitalRibbon from '@/components/HospitalRibbon/HospitalRibbon';
 import EmergencyCTA from '@/components/EmergencyCTA/EmergencyCTA';
-import MinimalBlogList from '@/components/MinimalBlogList/MinimalBlogList';
 import NewsletterStrip from '@/components/NewsletterStrip/NewsletterStrip';
 import AppBanner from '@/components/AppBanner/AppBanner';
 import Footer from '@/components/Footer/Footer';

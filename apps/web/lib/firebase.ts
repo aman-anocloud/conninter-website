@@ -11,6 +11,8 @@ const firebaseConfig = {
 };
 
 const app = getApps().length ? getApps()[0] : (typeof process !== 'undefined' && process.env.NODE_ENV === 'test' ? null : initializeApp(firebaseConfig));
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const auth = app ? getAuth(app) : {} as any;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const db = app ? getFirestore(app) : {} as any;
 export default app;

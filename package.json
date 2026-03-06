@@ -2,16 +2,14 @@
   "name": "conninter",
   "private": true,
   "workspaces": [
-    "apps/*",
-    "packages/*"
+    "apps/web"
   ],
   "scripts": {
-    "dev": "turbo run dev --parallel",
-    "build": "turbo run build",
-    "lint": "turbo run lint"
+    "dev": "npm --workspace=apps/web run dev",
+    "build": "npm --workspace=apps/web run build",
+    "lint": "npm --workspace=apps/web run lint"
   },
   "devDependencies": {
-    "turbo": "^1.13.3",
     "typescript": "^5.3.3"
   },
   "packageManager": "npm@10.2.4"

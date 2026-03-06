@@ -1,30 +1,31 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import { marked } from 'marked';
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
 import BlogPostClient from './BlogPostClient';
 import styles from './page.module.css';
+import { client } from '../../../sanity/lib/client';
 
+export const revalidate = 60; // Revalidate every 60 seconds
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function getPost(slug: string): Promise<any | null> {
     try {
-        const filePath = path.join(process.cwd(), 'content', 'blog', `${slug}.md`);
-        if (!fs.existsSync(filePath)) return null;
+        const query = `*[_type == "post" && slug.current == $slug][0] {
+            title,
+            "slug": slug.current,
+            "author": author->name,
+            "category": categories[0]->title,
+            "coverImage": mainImage.asset->url,
+            publishedAt,
+            excerpt,
+            body
+        }`;
 
-        const fileContents = fs.readFileSync(filePath, 'utf8');
-        const { data, content } = matter(fileContents);
-        const htmlContent = marked.parse(content);
-
-        return {
-            slug,
-            ...data,
-            content: htmlContent,
-        };
+        const post = await client.fetch(query, { slug });
+        return post || null;
     } catch (err) {
-        console.error("Failed to read post file", err);
+        console.error("Failed to fetch post from Sanity", err);
         return null;
     }
 }

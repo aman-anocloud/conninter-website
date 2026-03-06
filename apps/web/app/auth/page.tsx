@@ -20,6 +20,7 @@ export default function AuthPage() {
     useEffect(() => {
         if (typeof window !== 'undefined' && recaptchaRef.current) {
             try {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 (window as any).recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', { size: 'invisible' });
             } catch { }
         }
@@ -29,10 +30,12 @@ export default function AuthPage() {
         if (!phone || phone.length < 10) { setError('Enter a valid phone number'); return; }
         setLoading(true); setError('');
         try {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const verifier = (window as any).recaptchaVerifier;
             const result = await signInWithPhoneNumber(auth, `+91${phone.replace(/\D/g, '')}`, verifier);
             setConfirmation(result);
             setStep('otp');
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (e: any) {
             setError(e.message || 'Failed to send OTP. Check your number.');
         } finally {

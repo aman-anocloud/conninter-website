@@ -1,0 +1,101 @@
+﻿  Γû▓ Next.js 14.2.35
+
+   Creating an optimized production build ...
+ Γ£ô Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+node.exe : TypeError: 
+(0 , r.createContext) 
+is not a function
+At C:\Program Files\no
+dejs\npx.ps1:29 char:3
++   & $NODE_EXE 
+$NPX_CLI_JS $args
++   ~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (TypeError:   
+  (0 ,... not a fu    
+nction:String) []    
+, RemoteException
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+    at o 
+(C:\Users\Sahaj Singh\
+Documents\conninter\ap
+ps\web\.next\server\ap
+p\admin\[[...index]]\p
+age.js:10778:12518)
+    at 2059 
+(C:\Users\Sahaj Singh\
+Documents\conninter\ap
+ps\web\.next\server\ap
+p\admin\[[...index]]\p
+age.js:10782:1148)
+    at t 
+(C:\Users\Sahaj Singh\
+Documents\conninter\ap
+ps\web\.next\server\we
+bpack-runtime.js:1:143
+)
+    at 46041 
+(C:\Users\Sahaj Singh\
+Documents\conninter\ap
+ps\web\.next\server\ap
+p\admin\[[...index]]\p
+age.js:10782:10186)
+    at t 
+(C:\Users\Sahaj Singh\
+Documents\conninter\ap
+ps\web\.next\server\we
+bpack-runtime.js:1:143
+)
+    at 84569 
+(C:\Users\Sahaj Singh\
+Documents\conninter\ap
+ps\web\.next\server\ap
+p\admin\[[...index]]\p
+age.js:1:637322)
+    at t 
+(C:\Users\Sahaj Singh\
+Documents\conninter\ap
+ps\web\.next\server\we
+bpack-runtime.js:1:143
+)
+    at 32894 
+(C:\Users\Sahaj Singh\
+Documents\conninter\ap
+ps\web\.next\server\ap
+p\admin\[[...index]]\p
+age.js:1:2806)
+    at t 
+(C:\Users\Sahaj Singh\
+Documents\conninter\ap
+ps\web\.next\server\we
+bpack-runtime.js:1:143
+)
+    at n 
+(C:\Users\Sahaj Singh\
+Documents\conninter\ap
+ps\web\.next\server\ap
+p\admin\[[...index]]\p
+age.js:15176:111674)
+
+> Build error occurred
+Error: Failed to 
+collect page data for 
+/admin/[[...index]]
+    at C:\Users\Sahaj 
+Singh\Documents\connin
+ter\node_modules\next\
+dist\build\utils.js:12
+69:15
+    at process.process
+TicksAndRejections (no
+de:internal/process/ta
+sk_queues:105:5) {
+  type: 'Error'
+}

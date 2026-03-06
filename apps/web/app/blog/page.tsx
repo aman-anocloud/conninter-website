@@ -1,12 +1,9 @@
 import { Metadata } from 'next';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import Link from 'next/link';
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
 import BlogListClient from './BlogListClient';
 import styles from './page.module.css';
+import { client } from '../../sanity/lib/client';
 
 export const metadata: Metadata = {
     title: 'Blog & Insights',
@@ -15,29 +12,23 @@ export const metadata: Metadata = {
 
 const CATEGORIES = ['All', 'Industry Trends', 'Case Studies', 'Product Updates', 'News'];
 
+// Sanity GROQ query to fetch all posts
+const POSTS_QUERY = `*[_type == "post"] | order(publishedAt desc) {
+    title,
+    "slug": slug.current,
+    "author": author->name,
+    "category": categories[0]->title,
+    "coverImage": mainImage.asset->url,
+    publishedAt,
+    excerpt
+}`;
+
 async function getPosts() {
     try {
-        const directory = path.join(process.cwd(), 'content', 'blog');
-        if (!fs.existsSync(directory)) return [];
-
-        const filenames = fs.readdirSync(directory);
-        const posts = filenames
-            .filter((name) => name.endsWith('.md'))
-            .map((name) => {
-                const fullPath = path.join(directory, name);
-                const fileContents = fs.readFileSync(fullPath, 'utf8');
-                const { data } = matter(fileContents);
-
-                return {
-                    slug: name.replace('.md', ''),
-                    ...data,
-                };
-            })
-            .sort((a: any, b: any) => new Date(b.publishedAt || 0).getTime() - new Date(a.publishedAt || 0).getTime());
-
+        const posts = await client.fetch(POSTS_QUERY, {}, { next: { revalidate: 60 } });
         return posts;
     } catch (err) {
-        console.error('Failed to read local markdown posts', err);
+        console.error('Failed to read posts from Sanity', err);
         return [];
     }
 }

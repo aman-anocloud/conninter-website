@@ -1,0 +1,97 @@
+﻿  Γû▓ Next.js 14.2.35
+
+   Creating an optimized production build ...
+ Γ£ô Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+node.exe : Error: 
+`projectId` can only 
+contain only a-z, 0-9 
+and dashes
+At C:\Program Files\no
+dejs\npx.ps1:29 char:3
++   & $NODE_EXE 
+$NPX_CLI_JS $args
++   ~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (Error: `pr   
+ oject... 0-9 and     
+dashes:String) []    
+, RemoteException
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+    at L 
+(C:\Users\Sahaj Singh\
+Documents\conninter\ap
+ps\web\.next\server\ch
+unks\3946.js:6:2021)
+    at ea 
+(C:\Users\Sahaj Singh\
+Documents\conninter\ap
+ps\web\.next\server\ch
+unks\3946.js:6:7221)
+    at ts.config 
+(C:\Users\Sahaj Singh\
+Documents\conninter\ap
+ps\web\.next\server\ch
+unks\3946.js:9:19056)
+    at new ts 
+(C:\Users\Sahaj Singh\
+Documents\conninter\ap
+ps\web\.next\server\ch
+unks\3946.js:9:18546)
+    at createClient 
+(C:\Users\Sahaj Singh\
+Documents\conninter\ap
+ps\web\.next\server\ch
+unks\3946.js:9:20042)
+    at 38192 
+(C:\Users\Sahaj Singh\
+Documents\conninter\ap
+ps\web\.next\server\ap
+p\blog\[slug]\page.js:
+10:996)
+    at t 
+(C:\Users\Sahaj Singh\
+Documents\conninter\ap
+ps\web\.next\server\we
+bpack-runtime.js:1:143
+)
+    at 61268 
+(C:\Users\Sahaj Singh\
+Documents\conninter\ap
+ps\web\.next\server\ap
+p\blog\[slug]\page.js:
+1:9257)
+    at t 
+(C:\Users\Sahaj Singh\
+Documents\conninter\ap
+ps\web\.next\server\we
+bpack-runtime.js:1:143
+)
+    at 74818 
+(C:\Users\Sahaj Singh\
+Documents\conninter\ap
+ps\web\.next\server\ap
+p\blog\[slug]\page.js:
+1:2596)
+
+> Build error occurred
+Error: Failed to 
+collect page data for 
+/blog/[slug]
+    at C:\Users\Sahaj 
+Singh\Documents\connin
+ter\node_modules\next\
+dist\build\utils.js:12
+69:15
+    at process.process
+TicksAndRejections (no
+de:internal/process/ta
+sk_queues:105:5) {
+  type: 'Error'
+}
