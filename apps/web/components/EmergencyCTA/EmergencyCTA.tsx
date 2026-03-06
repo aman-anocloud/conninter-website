@@ -62,7 +62,7 @@ export default function EmergencyCTA() {
 
                     <div className={styles.floatCard}>
                         <div className={styles.floatIcon} style={{ background: '#e6faf5' }}>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00c896" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A4D65E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                 <rect x="1" y="3" width="15" height="13" rx="1"></rect>
                                 <path d="M16 8h5l2 4v4h-7V8z"></path>
                                 <circle cx="5.5" cy="18.5" r="2.5"></circle>
@@ -73,7 +73,7 @@ export default function EmergencyCTA() {
                             <p className={styles.floatTitle}>Delivery Scheduled</p>
                             <p className={styles.floatSub}>Gate B · Tomorrow 9:00 AM</p>
                         </div>
-                        <div className={styles.floatCheck} style={{ background: '#00c896' }}>
+                        <div className={styles.floatCheck} style={{ background: '#A4D65E' }}>
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>

@@ -17,7 +17,7 @@ const contacts = [
         name: 'Rohit Sharma',
         role: 'Medical Representative Lead',
         hospital: 'Manipal Hospital, Pune',
-        color: '#00c896',
+        color: '#A4D65E',
         specialty: 'Pharmaceutical Liaison',
     },
     {
@@ -25,7 +25,7 @@ const contacts = [
         name: 'Priya Desai',
         role: 'Supply Chain Manager',
         hospital: 'Fortis Healthcare, Mumbai',
-        color: '#6c5ce7',
+        color: '#003399',
         specialty: 'DMS & Gate Deliveries',
     },
     {
@@ -49,7 +49,7 @@ const contacts = [
         name: 'Vikram Nair',
         role: 'Regional Sales Head',
         hospital: 'Narayana Health, Bengaluru',
-        color: '#00c896',
+        color: '#A4D65E',
         specialty: 'Territory & Schedule Planning',
     },
 ];

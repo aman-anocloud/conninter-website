@@ -5,7 +5,8 @@
     right: 0;
     z-index: 999;
     transition: all var(--transition-base);
-    padding: 20px 0;
+    padding: 7px 0;
+    /* Reduced from 20px */
 }
 
 .nav.scrolled {
@@ -13,7 +14,8 @@
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     border-bottom: 1px solid var(--glass-border);
-    padding: 12px 0;
+    padding: 6px 0;
+    /* Reduced from 12px */
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
 }
 
@@ -26,14 +28,10 @@
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-family: var(--font-primary);
-    font-size: 22px;
-    font-weight: 800;
-    color: var(--neutral-900);
-    letter-spacing: -0.5px;
     text-decoration: none;
     flex-shrink: 0;
+    margin-right: auto;
+    /* Pushes everything else to the right */
 }
 
 .logoName {
@@ -75,13 +73,13 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--brand-primary);
+    background: var(--brand-accent);
     border-radius: 2px;
     transition: width var(--transition-base);
 }
 
 .links a:hover {
-    color: var(--brand-primary-dark);
+    color: var(--brand-accent);
 }
 
 .links a:hover::after {

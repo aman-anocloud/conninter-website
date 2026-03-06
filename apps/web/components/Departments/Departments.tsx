@@ -19,7 +19,7 @@ const mainDepts = [
         ),
     },
     {
-        color: '#00c896',
+        color: '#A4D65E',
         bgColor: '#e6faf5',
         name: 'Delivery Management System',
         desc: 'Schedule gate-level deliveries in advance. Hospitals control when supplies arrive — no surprise congestion, no delayed packages.',

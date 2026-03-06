@@ -4,13 +4,13 @@
    DESIGN TOKENS
    ============================================ */
 :root {
-  /* Brand Colors – Conninter Navy */
+  /* Brand Colors – Conninter Navy & Neon */
   --brand-primary: #003399;
   --brand-primary-dark: #002277;
   --brand-primary-light: #1a5bcc;
-  --brand-secondary: #00c896;
-  --brand-secondary-dark: #00a67a;
-  --brand-accent: #6c5ce7;
+  --brand-secondary: #39FF14; /* Neon Green */
+  --brand-secondary-dark: #2ce60b;
+  --brand-accent: #39FF14;
   --brand-warning: #f4a100;
   --brand-error: #e84040;
 
@@ -25,14 +25,14 @@
   --neutral-600: #475569;
   --neutral-700: #334155;
   --neutral-800: #1e293b;
-  --neutral-900: #0f172a;
-  --neutral-950: #020617;
+  --neutral-900: #0a0a0a; /* Black */
+  --neutral-950: #000000;
 
   /* Gradients */
-  --gradient-hero: linear-gradient(135deg, #e8eeff 0%, #dde7ff 40%, #ffffff 100%);
+  --gradient-hero: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%);
   --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 1) 0%, rgba(248, 250, 252, 1) 100%);
-  --gradient-primary: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-accent) 100%);
-  --gradient-success: linear-gradient(135deg, var(--brand-secondary) 0%, #00b4d8 100%);
+  --gradient-primary: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-light) 100%);
+  --gradient-success: linear-gradient(135deg, var(--brand-secondary) 0%, #5cff3d 100%);
   --gradient-cta: linear-gradient(135deg, #003399 0%, #1a5bcc 100%);
 
   /* Shadows */
@@ -41,7 +41,7 @@
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
   --shadow-glow-blue: 0 0 40px rgba(0, 51, 153, 0.25);
-  --shadow-glow-green: 0 0 40px rgba(0, 200, 150, 0.25);
+  --shadow-glow-green: 0 0 40px rgba(164, 214, 94, 0.35); /* Soft Green Glow */
   --shadow-glow-purple: 0 0 40px rgba(108, 92, 231, 0.25);
 
   /* Glassmorphism */
@@ -107,7 +107,14 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6, .headline, .heading {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.headline,
+.heading {
   font-family: var(--font-primary);
   font-weight: 700;
 }
@@ -311,19 +318,22 @@ select {
   align-items: center;
   gap: var(--space-2);
   padding: 14px 28px;
-  background: var(--gradient-cta);
+  background: var(--brand-primary);
   color: white;
   border-radius: var(--radius-full);
   font-weight: 600;
   font-size: 15px;
   letter-spacing: 0.3px;
-  transition: transform var(--transition-spring), box-shadow var(--transition-base);
+  transition: all var(--transition-base);
   cursor: pointer;
+  border: 1.5px solid transparent;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-glow-blue);
+  background: var(--brand-accent);
+  color: var(--neutral-950);
+  box-shadow: var(--shadow-glow-green);
 }
 
 .btn-primary:active {
@@ -336,8 +346,8 @@ select {
   gap: var(--space-2);
   padding: 13px 28px;
   background: white;
-  color: var(--neutral-800);
-  border: 1.5px solid var(--neutral-200);
+  color: var(--neutral-900);
+  border: 1.5px solid var(--neutral-900);
   border-radius: var(--radius-full);
   font-weight: 600;
   font-size: 15px;
@@ -347,9 +357,10 @@ select {
 }
 
 .btn-secondary:hover {
-  background: var(--glass-bg);
-  border-color: var(--brand-primary);
-  color: var(--brand-primary-light);
+  background: var(--neutral-950);
+  border-color: var(--neutral-950);
+  color: var(--brand-accent);
+  box-shadow: var(--shadow-glow-green);
 }
 
 .btn-ghost {
@@ -358,17 +369,17 @@ select {
   gap: var(--space-2);
   padding: 10px 20px;
   background: transparent;
-  color: var(--neutral-600);
+  color: var(--neutral-900);
   border-radius: var(--radius-md);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
   transition: all var(--transition-fast);
   cursor: pointer;
 }
 
 .btn-ghost:hover {
-  background: var(--neutral-100);
-  color: var(--neutral-900);
+  background: rgba(164, 214, 94, 0.1);
+  color: var(--brand-primary);
 }
 
 /* Section container */
@@ -506,10 +517,11 @@ select {
 .card-hover-effect {
   border: 1px solid var(--neutral-200);
   transition: all 0.3s ease;
+  background: var(--neutral-0);
 }
 
 .card-hover-effect:hover {
-  border-color: transparent;
-  box-shadow: 0 0 0 2px #006677; /* Deep green + deep blue mixture */
+  border-color: var(--brand-accent);
+  box-shadow: 0 8px 30px rgba(164, 214, 94, 0.15);
   transform: translateY(-4px);
 }

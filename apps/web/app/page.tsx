@@ -13,7 +13,6 @@ import NewsletterStrip from '@/components/NewsletterStrip/NewsletterStrip';
 import AppBanner from '@/components/AppBanner/AppBanner';
 import Footer from '@/components/Footer/Footer';
 import ChooseGateway from '@/components/ChooseGateway/ChooseGateway';
-import PartnersSection from '@/components/PartnersSection/PartnersSection';
 import BlogInsightsSection from '@/components/BlogInsightsSection/BlogInsightsSection';
 
 export const metadata: Metadata = {
@@ -62,10 +61,7 @@ export default function HomePage() {
                 {/* 9. Emergency CTA – Full-width blue gradient, two-column */}
                 <EmergencyCTA />
 
-                {/* 10. Partners Section */}
-                <PartnersSection />
-
-                {/* 11. Custom Blog Insights Section */}
+                {/* 10. Custom Blog Insights Section */}
                 <BlogInsightsSection />
 
                 {/* 12. Newsletter Strip – Email subscription */}

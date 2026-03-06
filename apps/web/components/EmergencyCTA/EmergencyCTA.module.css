@@ -44,7 +44,7 @@
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #00c896;
+    background: var(--brand-accent);
     box-shadow: 0 0 0 3px rgba(0, 200, 150, 0.4);
     animation: pulse 2s ease-in-out infinite;
 }
@@ -196,7 +196,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #00c896;
+    background: var(--brand-accent);
     animation: pulse 2s ease-in-out infinite;
 }
 

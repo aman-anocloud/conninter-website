@@ -16,7 +16,7 @@ const gateways = [
         benefits: ['Direct delivery scheduling', 'Inventory tracking', 'Streamlined invoicing'],
         iconPath: 'M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z',
         href: '#',
-        color: '#00c896'
+        color: '#A4D65E'
     },
     {
         title: 'Medical Representatives',
@@ -24,7 +24,7 @@ const gateways = [
         benefits: ['Priority booking slots', 'Doctor availability insights', 'Automated reminders'],
         iconPath: 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z',
         href: '#',
-        color: '#6c5ce7'
+        color: '#003399'
     }
 ];
 
@@ -53,7 +53,7 @@ export default function ChooseGateway() {
                             <ul className={styles.benefitsList}>
                                 {gateway.benefits.map((benefit, i) => (
                                     <li key={i} className={styles.benefitItem}>
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00c896" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A4D65E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                             <polyline points="20 6 9 17 4 12" />
                                         </svg>
                                         {benefit}

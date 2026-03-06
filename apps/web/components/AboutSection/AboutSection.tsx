@@ -27,7 +27,7 @@ const features = [
                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
             </svg>
         ),
-        color: '#00c896',
+        color: '#A4D65E',
         bg: '#e6faf5',
     },
     {
@@ -41,7 +41,7 @@ const features = [
                 <circle cx="18.5" cy="18.5" r="2.5"></circle>
             </svg>
         ),
-        color: '#6c5ce7',
+        color: '#003399',
         bg: '#f0eeff',
     },
     {

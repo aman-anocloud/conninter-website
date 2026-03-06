@@ -9,12 +9,12 @@ const CITIES = ['All Cities', 'Bengaluru', 'Mumbai', 'Delhi', 'Chennai', 'Hydera
 const partners = [
     { name: 'Sakra World', initials: 'S', color: '#0a84ff', cities: ['Bengaluru'], tier: 'Premium' },
     { name: 'Apollo Hospitals', initials: 'A', color: '#e84040', cities: ['Chennai', 'Hyderabad', 'Bengaluru', 'Delhi'], tier: 'Premium' },
-    { name: 'Fortis Healthcare', initials: 'F', color: '#6c5ce7', cities: ['Delhi', 'Mumbai', 'Bengaluru', 'Chennai'], tier: 'Premium' },
-    { name: 'Manipal Hospital', initials: 'M', color: '#00c896', cities: ['Bengaluru', 'Mumbai', 'Delhi'], tier: 'Partner' },
+    { name: 'Fortis Healthcare', initials: 'F', color: '#003399', cities: ['Delhi', 'Mumbai', 'Bengaluru', 'Chennai'], tier: 'Premium' },
+    { name: 'Manipal Hospital', initials: 'M', color: '#A4D65E', cities: ['Bengaluru', 'Mumbai', 'Delhi'], tier: 'Partner' },
     { name: 'Columbia Asia', initials: 'C', color: '#f4a100', cities: ['Bengaluru', 'Pune'], tier: 'Partner' },
     { name: 'Narayana Health', initials: 'N', color: '#0a84ff', cities: ['Bengaluru', 'Kolkata', 'Delhi'], tier: 'Partner' },
     { name: 'Aster Hospitals', initials: 'A', color: '#e84040', cities: ['Bengaluru', 'Hyderabad'], tier: 'Partner' },
-    { name: 'Global Hospitals', initials: 'G', color: '#6c5ce7', cities: ['Mumbai', 'Chennai', 'Hyderabad'], tier: 'Partner' },
+    { name: 'Global Hospitals', initials: 'G', color: '#003399', cities: ['Mumbai', 'Chennai', 'Hyderabad'], tier: 'Partner' },
 ];
 
 // Triplicate for fully seamless looping
