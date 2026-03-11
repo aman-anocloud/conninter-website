@@ -1,11 +1,13 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './DoctorsDirectory.module.css';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const contacts = [
     {
-        initials: 'AK',
+        image: 'https://images.unsplash.com/photo-1559839734-2b71f1536783?q=80&w=1170&auto=format&fit=crop',
         name: 'Ananya Krishnan',
         role: 'Hospital Coordinator',
         hospital: 'Sakra World Hospital, Bengaluru',
@@ -13,7 +15,7 @@ const contacts = [
         specialty: 'VMS & Slot Management',
     },
     {
-        initials: 'RS',
+        image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=1170&auto=format&fit=crop',
         name: 'Rohit Sharma',
         role: 'Medical Representative Lead',
         hospital: 'Manipal Hospital, Pune',
@@ -21,7 +23,7 @@ const contacts = [
         specialty: 'Pharmaceutical Liaison',
     },
     {
-        initials: 'PD',
+        image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1170&auto=format&fit=crop',
         name: 'Priya Desai',
         role: 'Supply Chain Manager',
         hospital: 'Fortis Healthcare, Mumbai',
@@ -29,7 +31,7 @@ const contacts = [
         specialty: 'DMS & Gate Deliveries',
     },
     {
-        initials: 'MJ',
+        image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1170&auto=format&fit=crop',
         name: 'Mohammed Javed',
         role: 'Hospital Admin',
         hospital: 'Apollo Hospitals, Chennai',
@@ -37,7 +39,7 @@ const contacts = [
         specialty: 'Operations & Compliance',
     },
     {
-        initials: 'SP',
+        image: 'https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=1170&auto=format&fit=crop',
         name: 'Savita Patil',
         role: 'Distributor Partner',
         hospital: 'MedHub Distributors, Hyderabad',
@@ -45,7 +47,7 @@ const contacts = [
         specialty: 'Logistics & Dispatch',
     },
     {
-        initials: 'VN',
+        image: 'https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?q=80&w=1170&auto=format&fit=crop',
         name: 'Vikram Nair',
         role: 'Regional Sales Head',
         hospital: 'Narayana Health, Bengaluru',
@@ -55,12 +57,13 @@ const contacts = [
 ];
 
 export default function DoctorsDirectory() {
+    const revealRef = useScrollAnimation();
     return (
-        <section className={styles.directory}>
+        <section className={styles.directory} ref={revealRef}>
             <div className={styles.container}>
                 {/* Header */}
-                <div className={styles.header}>
-                    <span className={styles.tagline}>And Those We Serve</span>
+                <div className={`${styles.header} reveal-up`}>
+                    <span className="section-eyebrow">Our Network</span>
                     <h2 className={styles.heading}>
                         Find Your Healthcare<br />
                         <span className="gradient-text">Contact & Partner</span>
@@ -71,7 +74,7 @@ export default function DoctorsDirectory() {
                 </div>
 
                 {/* Search / Filter row */}
-                <div className={styles.searchRow}>
+                <div className={`${styles.searchRow} reveal-up delay-100`}>
                     <div className={styles.searchField}>
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
@@ -90,9 +93,15 @@ export default function DoctorsDirectory() {
                 {/* Cards grid */}
                 <div className={styles.cardsGrid}>
                     {contacts.map((c, i) => (
-                        <div key={i} className={styles.card}>
-                            <div className={styles.cardAvatar} style={{ background: c.color }}>
-                                {c.initials}
+                        <div key={i} className={`${styles.card} reveal-up`} style={{ transitionDelay: `${(i % 3 + 1) * 100}ms` }}>
+                            <div className={styles.cardAvatar}>
+                                <Image
+                                    src={c.image}
+                                    alt={c.name}
+                                    width={56}
+                                    height={56}
+                                    style={{ objectFit: 'cover' }}
+                                />
                             </div>
                             <div className={styles.cardInfo}>
                                 <h4 className={styles.cardName}>{c.name}</h4>
@@ -107,17 +116,14 @@ export default function DoctorsDirectory() {
                                 <div className={styles.cardSpecialtyTag}>{c.specialty}</div>
                             </div>
                             <div className={styles.cardActions}>
-                                <Link href="/hospitals" className={styles.viewBtn}>View Profile</Link>
-                                <Link href="/auth" className={styles.bookBtn}>
-                                    Book Now
-                                </Link>
+                                <Link href="/hospitals" className={styles.viewBtn}>View Professional Profile</Link>
                             </div>
                         </div>
                     ))}
                 </div>
 
                 {/* View All CTA */}
-                <div className={styles.viewAllWrap}>
+                <div className={`${styles.viewAllWrap} reveal-up`}>
                     <Link href="/hospitals" className="btn-secondary">
                         View All Contacts
                     </Link>

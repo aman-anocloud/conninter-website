@@ -38,51 +38,11 @@ export default function EmergencyCTA() {
                     </div>
                 </div>
 
-                {/* Right: Floating status cards (isolated column) */}
-                <div className={styles.cardsCol}>
-                    <div className={styles.floatCard}>
-                        <div className={styles.floatIcon} style={{ background: '#e8f4ff' }}>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a84ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                <line x1="16" y1="2" x2="16" y2="6"></line>
-                                <line x1="8" y1="2" x2="8" y2="6"></line>
-                                <line x1="3" y1="10" x2="21" y2="10"></line>
-                            </svg>
-                        </div>
-                        <div>
-                            <p className={styles.floatTitle}>Slot Confirmed</p>
-                            <p className={styles.floatSub}>Sakra Hospital · Today 3:00 PM</p>
-                        </div>
-                        <div className={styles.floatCheck}>
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div className={styles.floatCard}>
-                        <div className={styles.floatIcon} style={{ background: '#e6faf5' }}>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A4D65E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <rect x="1" y="3" width="15" height="13" rx="1"></rect>
-                                <path d="M16 8h5l2 4v4h-7V8z"></path>
-                                <circle cx="5.5" cy="18.5" r="2.5"></circle>
-                                <circle cx="18.5" cy="18.5" r="2.5"></circle>
-                            </svg>
-                        </div>
-                        <div>
-                            <p className={styles.floatTitle}>Delivery Scheduled</p>
-                            <p className={styles.floatSub}>Gate B · Tomorrow 9:00 AM</p>
-                        </div>
-                        <div className={styles.floatCheck} style={{ background: '#A4D65E' }}>
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </div>
-                    </div>
-
+                {/* Right: Abstract Decorative Graphic or just more space */}
+                <div className={styles.visualCol}>
                     <div className={styles.liveIndicator}>
                         <span className={styles.liveDot} />
-                        <span>Live coordination active now</span>
+                        <span>Live support team online</span>
                     </div>
                 </div>
             </div>

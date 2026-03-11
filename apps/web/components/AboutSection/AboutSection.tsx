@@ -1,12 +1,13 @@
 'use client';
-
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './AboutSection.module.css';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const features = [
     {
         title: 'Digital Slot Booking',
-        desc: 'Medical representatives book hospital visits in advance — no more waiting in reception or being turned away at the gate.',
+        desc: 'Advanced visit scheduling for reps.',
         icon: (
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -20,19 +21,19 @@ const features = [
     },
     {
         title: 'Verified Professionals',
-        desc: 'Every hospital, distributor, and med rep on the platform goes through a structured verification process before they can operate.',
+        desc: 'Structured identity verification.',
         icon: (
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
             </svg>
         ),
-        color: '#A4D65E',
-        bg: '#e6faf5',
+        color: '#0a84ff',
+        bg: '#e8f4ff',
     },
     {
-        title: 'Real-Time Delivery Tracking',
-        desc: 'Gate-level visibility for hospital deliveries. Know exactly when supplies arrive, reduce congestion, and stay on schedule.',
+        title: 'Real-Time Delivery',
+        desc: 'Gate-level visibility for supplies.',
         icon: (
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="1" y="3" width="15" height="13" rx="1"></rect>
@@ -46,7 +47,7 @@ const features = [
     },
     {
         title: 'Secure & Compliant',
-        desc: 'Data privacy, role-based access, and audit trails built in from day one — so your operations stay protected.',
+        desc: 'Built-in role-based audit trails.',
         icon: (
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
@@ -58,57 +59,75 @@ const features = [
 ];
 
 export default function AboutSection() {
+    const revealRef = useScrollAnimation();
     return (
-        <section className={styles.about}>
+        <section className={styles.about} ref={revealRef}>
             <div className={styles.container}>
-                {/* Left Text Column */}
-                <div className={styles.leftCol}>
-                    <span className={styles.tagline}>Our Story</span>
-                    <h2 className={styles.heading}>
-                        Compassionate Care,<br />
-                        <span className="gradient-text">Powered by Technology</span>
-                    </h2>
-                    <p className={styles.body}>
-                        For years, hospital corridors were clogged with unplanned visits, surprise deliveries, and
-                        overflowing waiting rooms. We built Conninter because we saw a better way — one where
-                        hospitals could open their doors on their own terms, and where healthcare professionals
-                        could spend less time waiting and more time actually helping people.
-                    </p>
-                    <p className={styles.body}>
-                        Today, we work with hospitals, distributors, and medical representatives across India to
-                        bring order and efficiency to healthcare coordination. It&apos;s not just scheduling software —
-                        it&apos;s a system built around how healthcare actually works.
-                    </p>
-                    <Link href="/about" className="btn-primary">
-                        Learn More About Us
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                    </Link>
+                {/* 1. Main Content: Text Left, Image Right */}
+                <div className={styles.mainContent}>
+                    <div className={`${styles.leftCol} reveal-up`}>
+                        <span className="section-eyebrow">About Conninter</span>
+                        <h2 className={styles.heading}>
+                            Revolutionizing India&apos;s <br />
+                            <span className="gradient-text">Healthcare Coordination</span>
+                        </h2>
+                        <p className={styles.body}>
+                            Conninter began with a simple mission: bringing structure and efficiency to hospital corridors. 
+                            We bridge the gap between medical institutions, distributors, and representatives, ensuring every visit and delivery is scheduled, verified, and seamless.
+                        </p>
+                        <p className={styles.body}>
+                            Our technology removes the guesswork, allowing hospitals to open their doors on their own terms while providing professionals with the clarity they need to excel.
+                        </p>
+                        
+                        <div className={styles.ctaRow}>
+                            <Link href="/about" className="btn-primary" style={{ padding: '12px 30px' }}>
+                                Learn More Our Mission
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: 8 }}>
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </Link>
+                            {/* 24/7 Badge integrated here */}
+                            <div className={styles.emergencyPill}>
+                                <span className={styles.badgeDot} />
+                                <span>24/7 Support</span>
+                            </div>
+                        </div>
+                    </div>
 
-                    {/* 24/7 Badge */}
-                    <div className={styles.emergencyBadge}>
-                        <div className={styles.badgeDot} />
-                        <div>
-                            <p className={styles.badgeTitle}>24/7 Emergency Support</p>
-                            <p className={styles.badgeSub}>Always here when you need us most</p>
+                    <div className={`${styles.rightCol} reveal-up delay-200`}>
+                        <div className={styles.imageWrapper}>
+                            <Image
+                                src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1453&auto=format&fit=crop"
+                                alt="Modern Healthcare Coordination"
+                                width={600}
+                                height={450}
+                                className={styles.mainImage}
+                                priority
+                            />
+                            <div className={styles.trustBadge}>
+                                <div className={styles.badgeIcon}>✓</div>
+                                <div className={styles.badgeText}>
+                                    <p className={styles.badgeLabel}>100% SECURE</p>
+                                    <p className={styles.badgeVal}>HIPAA Compliant</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                {/* Right Features Grid */}
-                <div className={styles.rightCol}>
-                    <div className={styles.featuresGrid}>
-                        {features.map((f, i) => (
-                            <div key={i} className={styles.featureCard}>
-                                <div className={styles.featureIconWrap} style={{ background: f.bg, color: f.color }}>
-                                    {f.icon}
-                                </div>
-                                <h4 className={styles.featureTitle}>{f.title}</h4>
-                                <p className={styles.featureDesc}>{f.desc}</p>
+                {/* 2. Features Strip: 4 columns below main content */}
+                <div className={`${styles.featuresStrip} reveal-up delay-400`}>
+                    {features.map((f, i) => (
+                        <div key={i} className={styles.featureItem}>
+                            <div className={styles.miniIconWrap} style={{ color: f.color }}>
+                                {f.icon}
                             </div>
-                        ))}
-                    </div>
+                            <div className={styles.miniText}>
+                                <h5>{f.title}</h5>
+                                <p>{f.desc}</p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

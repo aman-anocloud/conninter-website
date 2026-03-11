@@ -1,16 +1,23 @@
 .about {
     padding: 100px 0;
     background: var(--neutral-0);
+    overflow: hidden;
 }
 
 .container {
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--space-6);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 80px;
-    align-items: start;
+}
+
+.mainContent {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
 }
 
 /* Left */
@@ -18,121 +25,211 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
-}
-
-.tagline {
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--brand-primary);
+    gap: 24px;
 }
 
 .heading {
-    font-size: clamp(36px, 4vw, 52px);
-    font-weight: 900;
-    letter-spacing: -1.5px;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 800;
     line-height: 1.1;
-    color: var(--neutral-900);
+    color: var(--brand-primary);
     margin: 0;
 }
 
 .body {
     font-size: 16px;
     color: var(--neutral-600);
-    line-height: 1.75;
+    line-height: 1.7;
     margin: 0;
+    max-width: 600px;
 }
 
-.emergencyBadge {
+.ctaRow {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 24px;
+    margin-top: 12px;
+}
+
+.emergencyPill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     background: var(--neutral-50);
     border: 1px solid var(--neutral-200);
-    padding: 16px 20px;
-    border-radius: var(--radius-md);
-    margin-top: 8px;
-    width: 100%;
+    padding: 8px 16px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--neutral-900);
+    text-transform: uppercase;
 }
 
 .badgeDot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
+    width: 8px;
+    height: 8px;
     background: var(--brand-secondary);
-    flex-shrink: 0;
-    box-shadow: 0 0 0 4px rgba(0, 200, 150, 0.2);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(0, 51, 153, 0.05);
+    animation: pulse 2s infinite;
 }
 
-.badgeTitle {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--neutral-900);
-    margin: 0 0 2px;
-}
-
-.badgeSub {
-    font-size: 12px;
-    color: var(--neutral-500);
-    margin: 0;
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 51, 153, 0.1); }
+    70% { box-shadow: 0 0 0 8px rgba(0, 51, 153, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 51, 153, 0); }
 }
 
 /* Right */
 .rightCol {
-    padding-top: 8px;
+    display: flex;
+    justify-content: flex-end;
 }
 
-.featuresGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+.imageWrapper {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    line-height: 0;
 }
 
-.featureCard {
-    background: var(--neutral-50);
-    border: 1px solid var(--neutral-200);
-    border-radius: var(--radius-md);
-    padding: 24px;
-    transition: all var(--transition-base);
+.mainImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.6s ease;
 }
 
-.featureCard:hover {
-    box-shadow: var(--shadow-md);
-    border-color: var(--brand-primary);
-    transform: translateY(-2px);
+.imageWrapper:hover .mainImage {
+    transform: scale(1.04);
 }
 
-.featureIcon {
-    font-size: 28px;
-    display: block;
-    margin-bottom: 12px;
+.trustBadge {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 12px 24px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border: 1px solid var(--neutral-100);
+    box-shadow: 0 10px 40px rgba(0, 51, 153, 0.08);
 }
 
-.featureTitle {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--neutral-900);
-    margin: 0 0 8px;
+.badgeIcon {
+    width: 24px;
+    height: 24px;
+    background: var(--brand-secondary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
 }
 
-.featureDesc {
-    font-size: 13px;
+.badgeText {
+    display: flex;
+    flex-direction: column;
+}
+
+.badgeLabel {
+    font-size: 9px;
+    font-weight: 800;
     color: var(--neutral-500);
-    line-height: 1.65;
+    letter-spacing: 1px;
     margin: 0;
 }
 
+.badgeVal {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--brand-primary);
+    margin: 0;
+}
+
+/* Features Strip */
+.featuresStrip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding-top: 40px;
+    border-top: 1px solid var(--neutral-100);
+}
+
+.featureItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.miniIconWrap {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background: var(--neutral-50);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.featureItem:hover .miniIconWrap {
+    transform: translateY(-5px);
+    background: var(--brand-primary);
+    color: white !important;
+}
+
+.miniText h5 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--neutral-900);
+    margin: 0 0 4px;
+}
+
+.miniText p {
+    font-size: 12px;
+    color: var(--neutral-500);
+    margin: 0;
+    line-height: 1.5;
+}
+
 @media (max-width: 1024px) {
-    .container {
+    .mainContent {
         grid-template-columns: 1fr;
-        gap: 60px;
+        gap: 50px;
+    }
+    
+    .featuresStrip {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .leftCol {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .body {
+        margin: 0 auto;
+    }
+    
+    .ctaRow {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn-primary {
+        width: 100%;
     }
 }
 
 @media (max-width: 640px) {
-    .featuresGrid {
+    .featuresStrip {
         grid-template-columns: 1fr;
     }
 }

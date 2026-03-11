@@ -1,84 +1,75 @@
 .footer {
-    background: var(--neutral-0);
-    border-top: 1px solid var(--glass-border);
+    background: #0a0f1e;
+    color: rgba(255, 255, 255, 0.75);
+    border-top: none;
+}
+
+.upper {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 80px 0 60px;
 }
 
 .inner {
     display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: var(--space-16);
-    padding: var(--space-16) var(--space-6);
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 48px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
 }
 
 .brand {
     display: flex;
     flex-direction: column;
     gap: var(--space-5);
-    max-width: 360px;
+    max-width: 300px;
 }
 
 .logo {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
-    font-size: 22px;
-    font-weight: 800;
-    color: var(--neutral-900);
     text-decoration: none;
-}
-
-.logoName {
-    font-family: var(--font-primary);
-    font-size: 20px;
-    font-weight: 800;
-    color: #003399;
-    letter-spacing: -0.3px;
-}
-
-.ciSpan {
-    font-size: 28px;
-    font-weight: 900;
-    color: #003399;
-    letter-spacing: -1px;
+    /* brightness filter to make logo visible on dark bg */
+    filter: brightness(10);
 }
 
 .tagline {
     font-size: 14px;
-    color: var(--neutral-500);
-    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 1.75;
 }
 
+/* Social icons */
 .social {
     display: flex;
     gap: var(--space-3);
+    margin-top: 4px;
 }
 
 .socialLink {
-    width: 36px;
-    height: 36px;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 13px;
     font-weight: 700;
-    color: var(--neutral-400);
+    color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
     transition: all var(--transition-fast);
 }
 
 .socialLink:hover {
-    border-color: var(--brand-primary);
-    color: var(--brand-primary-dark);
+    background: var(--gradient-hover);
+    border-color: transparent;
+    color: white;
+    transform: translateY(-2px);
 }
 
-.links {
-    display: flex;
-    gap: var(--space-12);
-}
-
+/* Nav columns */
 .col {
     display: flex;
     flex-direction: column;
@@ -86,43 +77,87 @@
 }
 
 .col h4 {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--neutral-500);
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.35);
     margin-bottom: var(--space-2);
+    font-family: var(--font-primary);
 }
 
 .col a {
     font-size: 14px;
-    color: var(--neutral-400);
+    color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
     transition: color var(--transition-fast);
+    line-height: 1.4;
 }
 
 .col a:hover {
-    color: var(--brand-primary-dark);
+    color: white;
 }
 
+/* Bottom bar */
 .bottom {
-    border-top: 1px solid var(--glass-border);
-    padding: var(--space-5) var(--space-6);
+    padding: 20px 0;
+    background: #060a15;
 }
 
-.bottom .container {
+.bottomInner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 16px;
 }
 
-.bottom p {
+.bottomInner p {
     font-size: 13px;
-    color: var(--neutral-600);
+    color: rgba(255, 255, 255, 0.3);
 }
 
 .tagRight {
-    color: var(--neutral-600);
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Certifications strip */
+.certStrip {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.certBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+}
+
+.certBadge svg {
+    color: var(--brand-secondary);
+    flex-shrink: 0;
+}
+
+/* Links section */
+.links {
+    display: contents;
+}
+
+@media (max-width: 1024px) {
+    .inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 48px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -131,14 +166,18 @@
         gap: var(--space-10);
     }
 
-    .links {
-        flex-direction: column;
-        gap: var(--space-8);
+    .brand {
+        max-width: 100%;
     }
 
-    .bottom .container {
+    .bottomInner {
         flex-direction: column;
-        gap: var(--space-2);
         text-align: center;
+        gap: var(--space-2);
+    }
+
+    .certStrip {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }

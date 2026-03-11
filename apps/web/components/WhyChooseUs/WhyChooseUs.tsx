@@ -70,7 +70,7 @@ export default function WhyChooseUs() {
             <div className={styles.container}>
                 {/* Left dark panel */}
                 <div className={styles.leftPanel}>
-                    <span className={styles.tagline}>Why Conninter</span>
+                    <span className="section-eyebrow" style={{ color: 'rgba(164,214,94,0.9)', background: 'rgba(164,214,94,0.1)', borderColor: 'rgba(164,214,94,0.3)' }}>Why Conninter</span>
                     <h2 className={styles.heading}>
                         Why Leading Hospitals Trust Conninter
                     </h2>

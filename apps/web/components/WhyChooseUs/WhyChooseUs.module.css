@@ -11,7 +11,7 @@
 
 /* Left dark panel */
 .leftPanel {
-    background: var(--brand-primary);
+    background: linear-gradient(145deg, #002080 0%, #003399 50%, #0a4aaa 100%);
     padding: 80px 56px;
     display: flex;
     flex-direction: column;
@@ -159,19 +159,23 @@
 .featureIconWrap {
     width: 48px;
     height: 48px;
-    background: var(--neutral-50);
-    border: 1px solid var(--neutral-200);
+    background: var(--neutral-100);
+    border: 1px solid transparent;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    color: var(--brand-primary);
     transition: all var(--transition-base);
 }
 
 .featureItem:hover .featureIconWrap {
     background: var(--brand-primary);
     border-color: var(--brand-primary);
+    color: white;
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(0, 51, 153, 0.25);
 }
 
 .featureIcon {

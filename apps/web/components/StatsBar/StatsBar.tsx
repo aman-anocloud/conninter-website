@@ -3,11 +3,22 @@
 import styles from './StatsBar.module.css';
 import { useCountUp } from '@/hooks/useScrollAnimation';
 
-function StatItem({ value, suffix, label, icon }: { value: number, suffix: string, label: string, icon: React.ReactNode }) {
+type StatItemProps = {
+    value: number;
+    suffix: string;
+    label: string;
+    icon: React.ReactNode;
+    iconBg: string;
+    iconColor: string;
+};
+
+function StatItem({ value, suffix, label, icon, iconBg, iconColor }: StatItemProps) {
     const numRef = useCountUp(value, 1800);
     return (
         <div className={styles.stat}>
-            <span className={styles.icon}>{icon}</span>
+            <div className={styles.iconWrap} style={{ background: iconBg, color: iconColor }}>
+                {icon}
+            </div>
             <div className={styles.textGroup}>
                 <span className={styles.value}>
                     <span ref={numRef}>0</span>{suffix}
@@ -26,6 +37,8 @@ export default function StatsBar() {
                     value={500}
                     suffix="+"
                     label="Hospitals Connected"
+                    iconBg="rgba(0, 51, 153, 0.08)"
+                    iconColor="#003399"
                     icon={
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path>
@@ -38,6 +51,8 @@ export default function StatsBar() {
                     value={1000000}
                     suffix="+"
                     label="Appointments Scheduled"
+                    iconBg="rgba(164, 214, 94, 0.12)"
+                    iconColor="#5a9e1a"
                     icon={
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -52,6 +67,8 @@ export default function StatsBar() {
                     value={50000}
                     suffix="+"
                     label="Healthcare Professionals"
+                    iconBg="rgba(10, 132, 255, 0.08)"
+                    iconColor="#0a84ff"
                     icon={
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
@@ -65,6 +82,8 @@ export default function StatsBar() {
                     value={98}
                     suffix="%"
                     label="Satisfaction Rate"
+                    iconBg="rgba(244, 161, 0, 0.10)"
+                    iconColor="#d48a00"
                     icon={
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>

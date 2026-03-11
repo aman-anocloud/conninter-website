@@ -36,9 +36,9 @@ export default function HospitalRibbon() {
         <section className={styles.section} id="partners">
             {/* Header */}
             <div className={styles.header}>
-                <div className="badge badge-green" style={{ marginBottom: 16 }}>Trusted Network</div>
+                <span className="section-eyebrow">Trusted Network</span>
                 <h2 className={styles.title}>
-                    Partner <span className="gradient-text-green">Hospitals</span>
+                    Partner <span className="gradient-text">Hospitals</span>
                 </h2>
                 <p className={styles.subtitle}>Trusted by India&apos;s leading hospitals. Search by city to find slots near you.</p>
             </div>

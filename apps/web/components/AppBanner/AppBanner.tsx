@@ -1,14 +1,17 @@
+'use client';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './AppBanner.module.css';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export default function AppBanner() {
+    const revealRef = useScrollAnimation();
     return (
-        <section className={styles.section}>
+        <section className={styles.section} ref={revealRef}>
             <div className={styles.container}>
-                <div className={styles.content}>
-                    <div className="badge badge-purple" style={{ marginBottom: 16 }}>Coming Soon</div>
-                    <h2 className={styles.title}>Your Hospital in Your Pocket</h2>
+                <div className={`${styles.content} reveal-up`}>
+                    <span className="section-eyebrow">Coming Soon</span>
+                    <h2 className={styles.title}>Your Hospital in <span className="gradient-text">Your Pocket</span></h2>
                     <p className={styles.description}>
                         Managing appointments, tracking deliveries, and connecting with top healthcare providers has never been easier. The Conninter Mobile App is launching soon for iOS and Android.
                     </p>
@@ -28,13 +31,13 @@ export default function AppBanner() {
                     </div>
                 </div>
 
-                <div className={styles.visual}>
+                <div className={`${styles.visual} reveal-up delay-200`}>
                     {/* CSS Smartphone Mockup */}
                     <div className={styles.phone}>
                         <div className={styles.notch}></div>
                         <div className={styles.screen}>
                             <Image
-                                src="/dashboard-preview.png"
+                                src="/MOBV.png"
                                 alt="Conninter App Preview"
                                 fill
                                 style={{ objectFit: 'cover', objectPosition: 'left top' }}

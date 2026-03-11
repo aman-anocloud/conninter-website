@@ -1,0 +1,53 @@
+.topBar {
+    background: #001a66;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 8px 0;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left, .right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.infoItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.infoItem svg {
+    color: var(--brand-secondary);
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: 8px;
+}
+
+.socials a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.socials a:hover {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .topBar {
+        display: none;
+    }
+}

@@ -93,8 +93,8 @@ export default function Departments() {
         <section className={styles.depts}>
             <div className={styles.container}>
                 <div className={styles.header}>
-                    <span className={styles.tagline}>What We Offer</span>
-                    <h2 className={styles.heading}>Featured Departments</h2>
+                    <span className="section-eyebrow">What We Offer</span>
+                    <h2 className={styles.heading}>Featured <span className="gradient-text">Departments</span></h2>
                     <p className={styles.sub}>A unified platform covering everything from scheduled visits to last-mile delivery coordination.</p>
                 </div>
 

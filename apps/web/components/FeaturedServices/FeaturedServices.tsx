@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import styles from './FeaturedServices.module.css';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const mainServices = [
     {
@@ -22,9 +23,9 @@ const mainServices = [
         ),
     },
     {
-        gradient: 'linear-gradient(135deg, #A4D65E 0%, #82b938 100%)',
-        iconBg: '#effff0',
-        iconColor: '#A4D65E',
+        gradient: 'linear-gradient(135deg, #001a66 0%, #003399 100%)',
+        iconBg: '#e8f4ff',
+        iconColor: '#003399',
         title: 'Supply Dispatch Coordination',
         desc: 'Distributors pre-schedule gate deliveries so hospitals can prepare receiving teams and avoid backlog at the entry point.',
         link: '/hospitals',
@@ -80,18 +81,19 @@ const miniServices = [
 ];
 
 export default function FeaturedServices() {
+    const revealRef = useScrollAnimation();
     return (
-        <section className={styles.services}>
+        <section className={styles.services} ref={revealRef}>
             <div className={styles.container}>
-                <div className={styles.header}>
-                    <span className={styles.tagline}>What We Do</span>
-                    <h2 className={styles.heading}>Comprehensive Healthcare <span className="gradient-text">Coordination</span></h2>
+                <div className={`${styles.header} reveal-up`}>
+                    <span className="section-eyebrow">Our Core Solutions</span>
+                    <h2 className={styles.heading}>Strategic Healthcare <span className="gradient-text">Excellence</span></h2>
                     <p className={styles.sub}>We connect every part of the healthcare supply chain — from the front gate to the operating room.</p>
                 </div>
 
                 <div className={styles.mainGrid}>
                     {mainServices.map((s, i) => (
-                        <div key={i} className={styles.serviceCard}>
+                        <div key={i} className={`${styles.serviceCard} reveal-up`} style={{ transitionDelay: `${(i + 1) * 100}ms` }}>
                             <div className={styles.serviceIconWrap} style={{ background: s.iconBg, color: s.iconColor }}>
                                 {s.icon}
                             </div>
@@ -107,7 +109,7 @@ export default function FeaturedServices() {
                     ))}
                 </div>
 
-                <div className={styles.miniGrid}>
+                <div className={`${styles.miniGrid} reveal-up`}>
                     {miniServices.map((m, i) => (
                         <div key={i} className={styles.miniChip}>
                             <span className={styles.miniIcon}>{m.icon}</span>

@@ -14,6 +14,7 @@ import AppBanner from '@/components/AppBanner/AppBanner';
 import Footer from '@/components/Footer/Footer';
 import ChooseGateway from '@/components/ChooseGateway/ChooseGateway';
 import BlogInsightsSection from '@/components/BlogInsightsSection/BlogInsightsSection';
+import BackToTop from '@/components/BackToTop/BackToTop';
 
 export const metadata: Metadata = {
     title: 'Conninter – Clinic & Hospital Management Platform',
@@ -71,6 +72,7 @@ export default function HomePage() {
                 <AppBanner />
             </main>
             <Footer />
+            <BackToTop />
         </>
     );
 }

@@ -3,8 +3,7 @@
    ───────────────────────────── */
 .section {
     padding: 100px 0;
-    background: #ffffff;
-    /* solid white background */
+    background: var(--neutral-50);
     position: relative;
     overflow: hidden;
 }
@@ -148,12 +147,12 @@
 
 .fadeLeft {
     left: 0;
-    background: linear-gradient(90deg, #ffffff 0%, transparent 100%);
+    background: linear-gradient(90deg, #f8fafc 0%, transparent 100%);
 }
 
 .fadeRight {
     right: 0;
-    background: linear-gradient(-90deg, #ffffff 0%, transparent 100%);
+    background: linear-gradient(-90deg, #f8fafc 0%, transparent 100%);
 }
 
 .ribbon {

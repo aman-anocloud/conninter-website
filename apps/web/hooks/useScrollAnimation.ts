@@ -1,5 +1,5 @@
-// useScrollAnimation — triggers 'visible' class when element enters viewport
 'use client';
+// useScrollAnimation — triggers 'visible' class when element enters viewport
 import { useEffect, useRef } from 'react';
 
 export function useScrollAnimation(threshold = 0.12) {

@@ -59,7 +59,7 @@
     color: var(--neutral-800);
     font-size: 18px;
     line-height: 1.8;
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
 }
 
 .content :global(p) {

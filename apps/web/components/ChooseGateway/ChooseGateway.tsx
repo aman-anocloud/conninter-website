@@ -1,5 +1,7 @@
+'use client';
 import Link from 'next/link';
 import styles from './ChooseGateway.module.css';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const gateways = [
     {
@@ -8,7 +10,8 @@ const gateways = [
         benefits: ['Automated visitor logging', 'Real-time staff tracking', 'Enhanced security protocols'],
         iconPath: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
         href: '/hospitals',
-        color: '#003399'
+        color: '#003399',
+        linkText: 'Access Hospital Portal'
     },
     {
         title: 'Distributors',
@@ -16,7 +19,8 @@ const gateways = [
         benefits: ['Direct delivery scheduling', 'Inventory tracking', 'Streamlined invoicing'],
         iconPath: 'M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z',
         href: '#',
-        color: '#A4D65E'
+        color: '#5a9e1a',
+        linkText: 'Access Distributor Portal'
     },
     {
         title: 'Medical Representatives',
@@ -24,16 +28,19 @@ const gateways = [
         benefits: ['Priority booking slots', 'Doctor availability insights', 'Automated reminders'],
         iconPath: 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z',
         href: '#',
-        color: '#003399'
+        color: '#003399',
+        linkText: 'Access MedRep Portal'
     }
 ];
 
 export default function ChooseGateway() {
+    const revealRef = useScrollAnimation();
     return (
-        <section className={styles.section} id="gateways">
+        <section className={styles.section} id="gateways" ref={revealRef}>
             <div className={`container ${styles.container}`}>
-                <div className={styles.header}>
-                    <h2 className={styles.title}>Choose Your Gateway</h2>
+                <div className={`${styles.header} reveal-up`}>
+                    <span className="section-eyebrow">Role-Based Access</span>
+                    <h2 className={styles.title}>Choose Your <span className="gradient-text">Gateway</span></h2>
                     <p className={styles.description}>
                         Select your portal to connect directly to the features tailored for your specific role in the healthcare ecosystem.
                     </p>
@@ -41,7 +48,7 @@ export default function ChooseGateway() {
 
                 <div className={styles.grid}>
                     {gateways.map((gateway, index) => (
-                        <div key={index} className={`${styles.card} card-hover-effect`}>
+                        <div key={index} className={`${styles.card} card-hover-effect reveal-up`} style={{ transitionDelay: `${(index + 1) * 150}ms` }}>
                             <div className={styles.iconWrapper} style={{ backgroundColor: gateway.color + '15' }}>
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke={gateway.color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                                     <path d={gateway.iconPath} />
@@ -62,7 +69,7 @@ export default function ChooseGateway() {
                             </ul>
 
                             <Link href={gateway.href} className="btn-primary" style={{ marginTop: 'auto', alignSelf: 'flex-start', background: gateway.color, padding: '10px 20px' }}>
-                                Select Your Gateway
+                                {gateway.linkText}
                             </Link>
                         </div>
                     ))}

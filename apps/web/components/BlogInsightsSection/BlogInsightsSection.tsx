@@ -5,7 +5,7 @@ import styles from './BlogInsightsSection.module.css';
 const insights = [
     {
         title: 'The Future of Hospital Visitor Management',
-        excerpt: 'Discover how digital systems are replacing logbooks, improving security, and streamlining patient check-ins.',
+        excerpt: 'Discover how digital systems are replacing logbooks, improving security, and streamlining patient check-ins across India\'s top hospitals.',
         category: 'Industry Trends',
         date: 'Oct 12, 2023',
         image: 'https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=1033&auto=format&fit=crop',
@@ -14,16 +14,16 @@ const insights = [
     },
     {
         title: 'Best Practices for Medical Representatives',
-        excerpt: 'How to maximize your doctor visits through efficient scheduling platforms and follow-up tools.',
+        excerpt: 'How to maximize your doctor visits through efficient scheduling platforms, follow-up tools, and smart territory planning.',
         category: 'Best Practices',
         date: 'Nov 04, 2023',
-        image: 'https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=1033&auto=format&fit=crop',
+        image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1170&auto=format&fit=crop',
         readTime: '7 min read',
         slug: '/blog/med-rep-best-practices'
     },
     {
         title: 'Integrating DMS with Existing Healthcare Infrastructure',
-        excerpt: 'A technical deep-dive into connecting modern Delivery Management Systems with legacy hospital databases.',
+        excerpt: 'A technical deep-dive into connecting modern Delivery Management Systems with legacy hospital databases and workflows.',
         category: 'Expert Opinions',
         date: 'Dec 18, 2023',
         image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop',
@@ -38,13 +38,17 @@ export default function BlogInsightsSection() {
             <div className={`container ${styles.container}`}>
                 <div className={styles.header}>
                     <div className={styles.headerText}>
-                        <h2 className={styles.title}>Latest Insights</h2>
+                        <span className="section-eyebrow">Healthcare Insights</span>
+                        <h2 className={styles.title}>Latest <span className="gradient-text">Insights</span></h2>
                         <p className={styles.description}>
                             Stay updated with the latest trends, expert opinions, and best practices in healthcare management.
                         </p>
                     </div>
                     <Link href="/blog" className="btn-secondary">
                         View All Articles
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
                     </Link>
                 </div>
 
