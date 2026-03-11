@@ -1,0 +1,22 @@
+
+> web@0.1.0 lint
+> next lint
+
+
+./app/admin/bookings/page.tsx
+45:60  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/api/bookings/[id]/route.ts
+24:56  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/api/partners/route.ts
+19:55  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./components/PartnersSection/BookingModal.tsx
+56:23  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+npm ERR! Lifecycle script `lint` failed with error: 
+npm ERR! Error: command failed 
+npm ERR!   in workspace: web@0.1.0 
+npm ERR!   at location: D:\New folder (4)\conninter-website\apps\web 

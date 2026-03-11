@@ -1,38 +1,43 @@
-import Image from 'next/image';
-import styles from './PartnersSection.module.css';
+'use client';
 
-const partners = [
-    {
-        name: 'MediCorp Health',
-        logo: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=128&h=128&fit=crop&auto=format',
-        description: 'Collaborating to integrate digital health records seamlessly.',
-        type: 'Healthcare Provider',
-        role: 'Integration Partner'
-    },
-    {
-        name: 'Nexus Pharma',
-        logo: 'https://images.unsplash.com/photo-1585435557343-3b092031a831?w=128&h=128&fit=crop&auto=format',
-        description: 'Optimizing pharmaceutical supply chain delivery routes.',
-        type: 'Logistics',
-        role: 'Distribution Network'
-    },
-    {
-        name: 'CareSync Technologies',
-        logo: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=128&h=128&fit=crop&auto=format',
-        description: 'Providing AI-driven insights for patient scheduling.',
-        type: 'Technology',
-        role: 'Strategic Alliance'
-    },
-    {
-        name: 'Global Medical Devices',
-        logo: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=128&h=128&fit=crop&auto=format',
-        description: 'Standardizing equipment procurement processes.',
-        type: 'Manufacturing',
-        role: 'Supply Partner'
-    }
-];
+import { useState, useEffect } from 'react';
+import styles from './PartnersSection.module.css';
+import PartnerCard, { Partner } from './PartnerCard';
+import BookingModal from './BookingModal';
 
 export default function PartnersSection() {
+    const [partners, setPartners] = useState<Partner[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [selectedPartner, setSelectedPartner] = useState<Partner | null>(null);
+
+    useEffect(() => {
+        const fetchPartners = async () => {
+            try {
+                const res = await fetch('/api/partners');
+                if (res.ok) {
+                    const data = await res.json();
+                    setPartners(data);
+                }
+            } catch (error) {
+                console.error('Failed to fetch partners:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchPartners();
+    }, []);
+
+    const handleOpenModal = (partner: Partner) => {
+        setSelectedPartner(partner);
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    };
+
+    const handleCloseModal = () => {
+        setSelectedPartner(null);
+        document.body.style.overflow = '';
+    };
+
     return (
         <section className={styles.section} id="partners">
             <div className={`container ${styles.container}`}>
@@ -42,37 +47,31 @@ export default function PartnersSection() {
                     </div>
                     <h2 className={styles.title}>Strategic Partnerships</h2>
                     <p className={styles.description}>
-                        We collaborate with industry leaders to build a comprehensive, reliable, and innovative healthcare ecosystem.
+                        We collaborate with industry leaders to providing seamless healthcare experiences and services.
                     </p>
                 </div>
 
-                <div className={styles.grid}>
-                    {partners.map((partner, index) => (
-                        <div key={index} className={`${styles.card} card-hover-effect`}>
-                            <div className={styles.cardHeader}>
-                                <div className={styles.logoWrapper}>
-                                    <Image
-                                        src={partner.logo}
-                                        alt={`${partner.name} logo`}
-                                        width={64}
-                                        height={64}
-                                        className={styles.partnerLogo}
-                                    />
-                                </div>
-                                <div className={styles.partnerMeta}>
-                                    <h3 className={styles.partnerName}>{partner.name}</h3>
-                                    <span className={styles.partnerType}>{partner.type}</span>
-                                </div>
-                            </div>
-                            <p className={styles.partnerDescription}>{partner.description}</p>
-                            <div className={styles.partnerRole}>
-                                <span className={styles.roleLabel}>Role:</span>
-                                <span className={styles.roleValue}>{partner.role}</span>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                {loading ? (
+                    <div className={styles.loadingContainer}>Loading partners...</div>
+                ) : (
+                    <div className={styles.grid}>
+                        {partners.map((partner) => (
+                            <PartnerCard 
+                                key={partner.id} 
+                                partner={partner} 
+                                onBookNow={handleOpenModal} 
+                            />
+                        ))}
+                    </div>
+                )}
             </div>
+
+            {selectedPartner && (
+                <BookingModal 
+                    partner={selectedPartner}
+                    onClose={handleCloseModal}
+                />
+            )}
         </section>
     );
 }
