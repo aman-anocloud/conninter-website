@@ -7,7 +7,7 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const contacts = [
     {
-        image: 'https://images.unsplash.com/photo-1559839734-2b71f1536783?q=80&w=1170&auto=format&fit=crop',
+        image: 'https://images.unsplash.com/photo-1659353888139-4910fb37dc14?auto=format&fit=crop&q=80&w=2070',
         name: 'Ananya Krishnan',
         role: 'Hospital Coordinator',
         hospital: 'Sakra World Hospital, Bengaluru',
@@ -54,7 +54,33 @@ const contacts = [
         color: '#A4D65E',
         specialty: 'Territory & Schedule Planning',
     },
+    {
+        image: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=1170&auto=format&fit=crop',
+        name: 'Arjun Mehta',
+        role: 'Purchase Head',
+        hospital: 'Max Super Specialty, Delhi',
+        color: '#0a84ff',
+        specialty: 'Procurement & Inventory',
+    },
+    {
+        image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1170&auto=format&fit=crop',
+        name: 'Dr. Kavita Rao',
+        role: 'Chief of Operations',
+        hospital: 'Medanta - The Medicity, Gurugram',
+        color: '#003399',
+        specialty: 'Operations & Strategic Planning',
+    },
+    {
+        image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2??q=80&w=1170&auto=format&fit=crop',
+        name: 'Sneha Reddy',
+        role: 'HR Manager',
+        hospital: 'Apollo Hospitals, Hyderabad',
+        color: '#f4a100',
+        specialty: 'Human Resources & Talent',
+    },
 ];
+
+const QUICK_SPECIALTIES = ['All', 'Purchase', 'Operations', 'CSSD', 'Cardiology', 'HR', 'Supply Chain'];
 
 export default function DoctorsDirectory() {
     const revealRef = useScrollAnimation();
@@ -86,8 +112,18 @@ export default function DoctorsDirectory() {
                         <option>Hospital Coordinator</option>
                         <option>Medical Rep</option>
                         <option>Distributor</option>
+                        <option>Purchase/Operations</option>
                     </select>
                     <button className="btn-primary">Search</button>
+                </div>
+
+                {/* Specialty Chips */}
+                <div className={`${styles.specialtyChips} reveal-up delay-150`}>
+                    {QUICK_SPECIALTIES.map((s, i) => (
+                        <button key={i} className={styles.specialtyChip}>
+                            {s}
+                        </button>
+                    ))}
                 </div>
 
                 {/* Cards grid */}

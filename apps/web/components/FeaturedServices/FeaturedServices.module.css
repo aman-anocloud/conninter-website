@@ -40,15 +40,19 @@
     margin: 0;
 }
 
-/* Main 3 cards */
+/* Main cards - Centered Flex */
 .mainGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 24px;
-    margin-bottom: 32px;
+    margin-bottom: 48px;
 }
 
 .serviceCard {
+    flex: 1;
+    min-width: 320px;
+    max-width: 480px;
     background: var(--neutral-0);
     border: 1px solid var(--neutral-200);
     border-radius: 20px;
@@ -169,14 +173,16 @@
     width: 100%;
 }
 
-/* Mini chip row */
+/* Mini chip row - Centered Flex */
 .miniGrid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
 }
 
 .miniChip {
+    flex: 0 1 200px;
     background: var(--neutral-50);
     border: 1px solid var(--neutral-200);
     border-radius: var(--radius-md);
@@ -242,17 +248,21 @@
 }
 
 @media (max-width: 1024px) {
-    .mainGrid {
-        grid-template-columns: 1fr;
+    .serviceCard {
+        max-width: 100%;
     }
 
-    .miniGrid {
-        grid-template-columns: repeat(3, 1fr);
+    .miniChip {
+        flex: 1 1 160px;
     }
 }
 
 @media (max-width: 640px) {
-    .miniGrid {
-        grid-template-columns: repeat(2, 1fr);
+    .serviceCard {
+        min-width: 100%;
+    }
+    
+    .miniChip {
+        flex: 1 1 140px;
     }
 }

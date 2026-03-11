@@ -88,6 +88,40 @@
     outline: none;
 }
 
+.specialtyChips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 48px;
+    justify-content: center;
+}
+
+.specialtyChip {
+    padding: 8px 16px;
+    background: var(--neutral-50);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--neutral-600);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.specialtyChip:hover {
+    background: var(--brand-primary);
+    border-color: var(--brand-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 51, 153, 0.15);
+}
+
+.specialtyChipActive {
+    background: var(--brand-primary);
+    border-color: var(--brand-primary);
+    color: white;
+}
+
 /* Cards */
 .cardsGrid {
     display: grid;

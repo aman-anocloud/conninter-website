@@ -9,7 +9,7 @@ const mainServices = [
         gradient: 'linear-gradient(135deg, #0a84ff 0%, #45a3ff 100%)',
         iconBg: '#e8f4ff',
         iconColor: '#0a84ff',
-        title: 'Slot Booking for Hospital Visits',
+        title: 'Professional visit slot for hospital visit',
         desc: 'Medical representatives plan their hospital visits digitally. No walk-ins, no waiting — just confirmed, scheduled access to the right department at the right time.',
         link: '/hospitals',
         icon: (
@@ -26,7 +26,7 @@ const mainServices = [
         gradient: 'linear-gradient(135deg, #001a66 0%, #003399 100%)',
         iconBg: '#e8f4ff',
         iconColor: '#003399',
-        title: 'Supply Dispatch Coordination',
+        title: 'Delivery coordination/slot base delivery',
         desc: 'Distributors pre-schedule gate deliveries so hospitals can prepare receiving teams and avoid backlog at the entry point.',
         link: '/hospitals',
         icon: (
@@ -38,33 +38,12 @@ const mainServices = [
             </svg>
         ),
     },
-    {
-        gradient: 'linear-gradient(135deg, #003399 0%, #1a5bcc 100%)',
-        iconBg: '#f0f4ff',
-        iconColor: '#003399',
-        title: 'Diagnostics & Lab Coordination',
-        desc: 'Route lab samples, diagnostic requests, and specialist consultations through a single digital channel rather than phone calls and paper slips.',
-        link: '/hospitals',
-        icon: (
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v11m0 0h6m-6 0a2 2 0 0 0 0 4h6a2 2 0 0 0 0-4m0-11v11"></path>
-            </svg>
-        ),
-    },
 ];
 
 const miniServices = [
     {
         name: 'Med Rep Tour Management',
         icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>,
-    },
-    {
-        name: 'Vaccination Drive Scheduling',
-        icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3l18 18M10.5 10.677a2 2 0 0 0 2.823 2.823"></path><path d="M7.362 5.104a9 9 0 0 1 12.534 12.534M5.104 7.362A9 9 0 1 0 17.638 19.9"></path></svg>,
-    },
-    {
-        name: 'Emergency Routing',
-        icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>,
     },
     {
         name: 'Smart Analytics Dashboard',
@@ -86,8 +65,8 @@ export default function FeaturedServices() {
         <section className={styles.services} ref={revealRef}>
             <div className={styles.container}>
                 <div className={`${styles.header} reveal-up`}>
-                    <span className="section-eyebrow">Our Core Solutions</span>
-                    <h2 className={styles.heading}>Strategic Healthcare <span className="gradient-text">Excellence</span></h2>
+                    <span className="section-eyebrow">Healthcare Coordination</span>
+                    <h2 className={styles.heading}>Healthcare Professionals <span className="gradient-text">Coordination</span></h2>
                     <p className={styles.sub}>We connect every part of the healthcare supply chain — from the front gate to the operating room.</p>
                 </div>
 

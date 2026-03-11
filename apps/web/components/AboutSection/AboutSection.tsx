@@ -108,7 +108,7 @@ export default function AboutSection() {
                                 <div className={styles.badgeIcon}>✓</div>
                                 <div className={styles.badgeText}>
                                     <p className={styles.badgeLabel}>100% SECURE</p>
-                                    <p className={styles.badgeVal}>HIPAA Compliant</p>
+                                    <p className={styles.badgeVal}>Reliable & Protected</p>
                                 </div>
                             </div>
                         </div>

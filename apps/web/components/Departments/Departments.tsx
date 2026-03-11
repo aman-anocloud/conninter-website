@@ -35,15 +35,18 @@ const mainDepts = [
         ),
     },
     {
-        color: '#e84040',
-        bgColor: '#ffeaea',
-        name: 'Emergency Services 24/7',
-        desc: 'Our emergency coordination line is staffed around the clock with trained responders ready to connect the right people in seconds.',
+        color: '#003399',
+        bgColor: '#f0f4ff',
+        name: 'Premium Executive Access',
+        desc: 'Direct connectivity with CXO-level healthcare leaders for strategic partnerships and high-priority requirements.',
         link: '/auth',
-        linkText: 'Contact Support',
+        linkText: 'Connect Now',
         icon: (
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
             </svg>
         ),
     },
@@ -93,8 +96,8 @@ export default function Departments() {
         <section className={styles.depts}>
             <div className={styles.container}>
                 <div className={styles.header}>
-                    <span className="section-eyebrow">What We Offer</span>
-                    <h2 className={styles.heading}>Featured <span className="gradient-text">Departments</span></h2>
+                    <span className="section-eyebrow">Integrated Operations</span>
+                    <h2 className={styles.heading}>Our Integrated <span className="gradient-text">Solutions</span></h2>
                     <p className={styles.sub}>A unified platform covering everything from scheduled visits to last-mile delivery coordination.</p>
                 </div>
 

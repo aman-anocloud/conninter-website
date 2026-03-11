@@ -5,27 +5,27 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const gateways = [
     {
-        title: 'Hospitals',
-        description: 'Streamline visitor management and coordinate staff with ease.',
-        benefits: ['Automated visitor logging', 'Real-time staff tracking', 'Enhanced security protocols'],
+        title: 'Hospitals, Clinics & Healthcare Service Providers',
+        description: 'Command center for facility management and visitor logistics.',
+        benefits: ['Smart Appointment Control', 'Automated Visitor Logs', 'Staff Coordination Tools'],
         iconPath: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
         href: '/hospitals',
         color: '#003399',
         linkText: 'Access Hospital Portal'
     },
     {
-        title: 'Distributors',
-        description: 'Manage deliveries and track inventory moving across the healthcare network.',
-        benefits: ['Direct delivery scheduling', 'Inventory tracking', 'Streamlined invoicing'],
+        title: 'Distributors, Suppliers & Vendors',
+        description: 'Optimize supply chain visibility and streamline hospital deliveries.',
+        benefits: ['Direct Stock Updates', 'Real-time Delivery Tracking', 'Digital Invoicing Flow'],
         iconPath: 'M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z',
         href: '#',
         color: '#5a9e1a',
         linkText: 'Access Distributor Portal'
     },
     {
-        title: 'Medical Representatives',
-        description: 'Book appointments with doctors instantly and manage your visitation schedule.',
-        benefits: ['Priority booking slots', 'Doctor availability insights', 'Automated reminders'],
+        title: 'Medical & Industry Representatives',
+        description: 'Bridge the gap with HCPs through prioritized scheduling.',
+        benefits: ['Priority Slot Booking', 'Doctor Availability Feeds', 'Automated Visit Reminders'],
         iconPath: 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z',
         href: '#',
         color: '#003399',
@@ -39,10 +39,10 @@ export default function ChooseGateway() {
         <section className={styles.section} id="gateways" ref={revealRef}>
             <div className={`container ${styles.container}`}>
                 <div className={`${styles.header} reveal-up`}>
-                    <span className="section-eyebrow">Role-Based Access</span>
-                    <h2 className={styles.title}>Choose Your <span className="gradient-text">Gateway</span></h2>
+                    <span className="section-eyebrow">Precision Access</span>
+                    <h2 className={styles.title}>Experience Access <span className="gradient-text">Tailored for You</span></h2>
                     <p className={styles.description}>
-                        Select your portal to connect directly to the features tailored for your specific role in the healthcare ecosystem.
+                        Empower your operations with specialized portals designed to solve your unique challenges in the healthcare ecosystem.
                     </p>
                 </div>
 

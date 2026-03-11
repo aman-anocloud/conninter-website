@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import Navbar from '@/components/Navbar/Navbar';
 import HeroSlider from '@/components/HeroSlider/HeroSlider';
 import StatsBar from '@/components/StatsBar/StatsBar';
-import AboutSection from '@/components/AboutSection/AboutSection';
 import Departments from '@/components/Departments/Departments';
 import FeaturedServices from '@/components/FeaturedServices/FeaturedServices';
 import DoctorsDirectory from '@/components/DoctorsDirectory/DoctorsDirectory';
@@ -15,6 +14,7 @@ import Footer from '@/components/Footer/Footer';
 import ChooseGateway from '@/components/ChooseGateway/ChooseGateway';
 import BlogInsightsSection from '@/components/BlogInsightsSection/BlogInsightsSection';
 import BackToTop from '@/components/BackToTop/BackToTop';
+import PartnersSection from '@/components/PartnersSection/PartnersSection';
 
 export const metadata: Metadata = {
     title: 'Conninter – Clinic & Hospital Management Platform',
@@ -41,9 +41,6 @@ export default function HomePage() {
                 {/* 3. Choose Your Gateway */}
                 <ChooseGateway />
 
-                {/* 4. About – Two-column story + feature cards with SVG icons */}
-                <AboutSection />
-
                 {/* 5. Departments – VMS, DMS, Emergency, Directory, Pro Network, Analytics */}
                 <Departments />
 
@@ -61,6 +58,9 @@ export default function HomePage() {
 
                 {/* 9. Emergency CTA – Full-width blue gradient, two-column */}
                 <EmergencyCTA />
+                
+                {/* 9.5 Strategic Partners & Mentors */}
+                <PartnersSection />
 
                 {/* 10. Custom Blog Insights Section */}
                 <BlogInsightsSection />

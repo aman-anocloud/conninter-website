@@ -3,32 +3,32 @@ import styles from './PartnersSection.module.css';
 
 const partners = [
     {
-        name: 'MediCorp Health',
-        logo: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=128&h=128&fit=crop&auto=format',
-        description: 'Collaborating to integrate digital health records seamlessly.',
-        type: 'Healthcare Provider',
-        role: 'Integration Partner'
+        name: 'ANOcloud',
+        logo: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=128&h=128&fit=crop&auto=format',
+        description: 'Providing elastic healthcare cloud infrastructure and secure data hosting solutions.',
+        type: 'Infrastructure',
+        role: 'Strategic Cloud Partner'
     },
     {
-        name: 'Nexus Pharma',
+        name: 'Dr. Vikram Sethi',
+        logo: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=128&h=128&fit=crop&auto=format',
+        description: 'Guiding clinical workflow optimization and digital health transformation strategies.',
+        type: 'Healthcare Expert',
+        role: 'Chief Medical Advisor'
+    },
+    {
+        name: 'Nexus Pharma Solutions',
         logo: 'https://images.unsplash.com/photo-1585435557343-3b092031a831?w=128&h=128&fit=crop&auto=format',
-        description: 'Optimizing pharmaceutical supply chain delivery routes.',
+        description: 'Global pharmaceutical logistics advisor for efficient supply-chain distribution.',
         type: 'Logistics',
-        role: 'Distribution Network'
+        role: 'Distribution Mentor'
     },
     {
-        name: 'CareSync Technologies',
-        logo: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=128&h=128&fit=crop&auto=format',
-        description: 'Providing AI-driven insights for patient scheduling.',
+        name: 'Elena Rodriguez',
+        logo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=128&h=128&fit=crop&auto=format',
+        description: 'Technology pioneer advising on AI integration and scalable enterprise architecture.',
         type: 'Technology',
-        role: 'Strategic Alliance'
-    },
-    {
-        name: 'Global Medical Devices',
-        logo: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=128&h=128&fit=crop&auto=format',
-        description: 'Standardizing equipment procurement processes.',
-        type: 'Manufacturing',
-        role: 'Supply Partner'
+        role: 'Technology Mentor'
     }
 ];
 
@@ -40,7 +40,7 @@ export default function PartnersSection() {
                     <div className="badge badge-purple" style={{ marginBottom: '16px', display: 'inline-flex' }}>
                         Our Network
                     </div>
-                    <h2 className={styles.title}>Strategic Partnerships</h2>
+                    <h2 className={styles.title}>Strategic Partners, Advisors & Mentors</h2>
                     <p className={styles.description}>
                         We collaborate with industry leaders to build a comprehensive, reliable, and innovative healthcare ecosystem.
                     </p>

@@ -146,36 +146,56 @@
     padding: 80px 64px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 32px;
     align-content: center;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
 }
 
 .featureItem {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
     gap: 20px;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 24px;
+    box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .featureIconWrap {
-    width: 48px;
-    height: 48px;
-    background: var(--neutral-100);
-    border: 1px solid transparent;
-    border-radius: 12px;
+    width: 52px;
+    height: 52px;
+    background: white;
+    border: 1px solid var(--neutral-200);
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
     color: var(--brand-primary);
-    transition: all var(--transition-base);
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.featureItem:hover {
+    transform: translateY(-8px) scale(1.02);
+    background: white;
+    border-color: var(--brand-primary);
+    box-shadow: 
+        0 20px 25px -5px rgba(0, 51, 153, 0.1),
+        0 10px 10px -5px rgba(0, 51, 153, 0.04);
 }
 
 .featureItem:hover .featureIconWrap {
     background: var(--brand-primary);
     border-color: var(--brand-primary);
     color: white;
-    transform: scale(1.08);
-    box-shadow: 0 8px 20px rgba(0, 51, 153, 0.25);
+    transform: rotate(-8deg);
 }
 
 .featureIcon {
@@ -187,16 +207,17 @@
 }
 
 .featureTitle {
-    font-size: 16px;
-    font-weight: 800;
+    font-size: 17px;
+    font-weight: 900;
     color: var(--neutral-900);
-    margin: 0 0 8px;
+    margin: 0 0 10px;
+    letter-spacing: -0.5px;
 }
 
 .featureDesc {
-    font-size: 13px;
-    color: var(--neutral-500);
-    line-height: 1.65;
+    font-size: 14px;
+    color: var(--neutral-600);
+    line-height: 1.6;
     margin: 0;
 }
 
