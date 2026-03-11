@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './HeroSlider.module.css';
+import { useLeadModal } from '@/context/LeadModalContext';
+import { useVideoModal } from '@/context/VideoModalContext';
 
 const slides = [
     {
@@ -57,6 +59,8 @@ const slides = [
 ];
 
 export default function HeroSlider() {
+    const { open } = useLeadModal();
+    const { open: openVideo } = useVideoModal();
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isMounted, setIsMounted] = useState(false);
 
@@ -114,12 +118,12 @@ export default function HeroSlider() {
                             </p>
 
                             <div className={styles.ctas}>
-                                <Link href="/auth" className="btn-primary connectBtn" style={{ background: 'white', color: '#003399', boxShadow: '0 4px 20px rgba(0,0,0,0.2)' }}>
+                                <button onClick={open} className="btn-primary connectBtn" style={{ background: 'white', color: '#003399', boxShadow: '0 4px 20px rgba(0,0,0,0.2)' }}>
                                     Connect With Us
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '8px' }}>
                                         <path d="M5 12h14M12 5l7 7-7 7" />
                                     </svg>
-                                </Link>
+                                </button>
                                 <Link href="/hospitals" className={styles.exploreBtn} style={{
                                     display: 'inline-flex', alignItems: 'center', gap: 8,
                                     padding: '13px 28px', borderRadius: 9999,
@@ -129,6 +133,36 @@ export default function HeroSlider() {
                                 }}>
                                     Explore Hospitals
                                 </Link>
+                                <button 
+                                    onClick={openVideo}
+                                    style={{
+                                        display: 'inline-flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        width: '56px',
+                                        height: '56px',
+                                        borderRadius: '50%',
+                                        background: 'rgba(255,255,255,0.15)',
+                                        border: '2px solid rgba(255,255,255,0.3)',
+                                        color: 'white',
+                                        cursor: 'pointer',
+                                        transition: 'all 0.3s ease',
+                                        fontFamily: 'var(--font-primary)'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.background = 'rgba(255,255,255,0.25)';
+                                        e.currentTarget.style.transform = 'scale(1.05)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.background = 'rgba(255,255,255,0.15)';
+                                        e.currentTarget.style.transform = 'scale(1)';
+                                    }}
+                                    aria-label="Play video"
+                                >
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                        <polygon points="5 3 19 12 5 21 5 3" />
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                     </div>

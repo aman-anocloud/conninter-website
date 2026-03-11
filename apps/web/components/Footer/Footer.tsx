@@ -2,6 +2,27 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Footer.module.css';
 
+const advisors = [
+    {
+        name: 'Dr. Rajesh Kumar',
+        role: 'Chief Medical Advisor',
+        organization: 'Apollo Hospitals',
+        image: null
+    },
+    {
+        name: 'Priya Sharma',
+        role: 'Healthcare Operations Lead',
+        organization: 'Fortis Healthcare',
+        image: null
+    },
+    {
+        name: 'Arjun Patel',
+        role: 'Supply Chain Expert',
+        organization: 'Columbia Asia',
+        image: null
+    }
+];
+
 export default function Footer() {
     return (
         <footer className={styles.footer}>
@@ -69,6 +90,22 @@ export default function Footer() {
                         <a href="#">Careers</a>
                         <a href="#">Privacy Policy</a>
                         <a href="#">Terms of Service</a>
+                    </div>
+
+                    {/* Advisors column */}
+                    <div className={styles.col}>
+                        <h4>Advisors</h4>
+                        <div className={styles.advisorsList}>
+                            {advisors.map((advisor, index) => (
+                                <div key={index} className={styles.advisorItem}>
+                                    <div className={styles.advisorName}>{advisor.name}</div>
+                                    <div className={styles.advisorRole}>{advisor.role}</div>
+                                    {advisor.organization && (
+                                        <div className={styles.advisorOrg}>{advisor.organization}</div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

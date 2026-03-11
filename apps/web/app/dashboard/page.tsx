@@ -47,6 +47,9 @@ export default function DashboardPage() {
                     <Link href="/hospitals" className="btn-primary" style={{ fontSize: 14, padding: '10px 20px' }}>
                         ➕ Book Slot
                     </Link>
+                    <Link href="/dashboard/hcp-availability" className="btn-primary" style={{ fontSize: 14, padding: '10px 20px', marginLeft: '10px' }}>
+                        👨‍⚕️ Available HCPs
+                    </Link>
                 </div>
             </div>
 

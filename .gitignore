@@ -4,3 +4,5 @@ dist
 .env
 .env.local
 .turbo
+# local sqlite database
+apps/web/data

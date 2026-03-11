@@ -1,0 +1,33 @@
+.container {
+    padding: 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+}
+
+.card h3 {
+    margin: 0 0 1rem 0;
+    color: #003399;
+}
+
+.card p {
+    margin: 0.5rem 0;
+    color: #666;
+}
+
+.card button {
+    margin-top: 1rem;
+    width: 100%;
+}

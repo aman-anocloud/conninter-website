@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from './AboutSection.module.css';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useVideoModal } from '@/context/VideoModalContext';
 
 const features = [
     {
@@ -60,6 +61,7 @@ const features = [
 
 export default function AboutSection() {
     const revealRef = useScrollAnimation();
+    const { open: openVideo } = useVideoModal();
     return (
         <section className={styles.about} ref={revealRef}>
             <div className={styles.container}>
@@ -86,6 +88,29 @@ export default function AboutSection() {
                                     <path d="M5 12h14M12 5l7 7-7 7" />
                                 </svg>
                             </Link>
+                            <button 
+                                onClick={openVideo} 
+                                className={styles.videoBtn}
+                                style={{ 
+                                    padding: '12px 30px',
+                                    border: '2px solid #003399',
+                                    background: 'transparent',
+                                    color: '#003399',
+                                    borderRadius: '9999px',
+                                    cursor: 'pointer',
+                                    fontWeight: 600,
+                                    fontSize: '15px',
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: '8px',
+                                    transition: 'all 0.3s ease'
+                                }}
+                            >
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                                Watch Video
+                            </button>
                             {/* 24/7 Badge integrated here */}
                             <div className={styles.emergencyPill}>
                                 <span className={styles.badgeDot} />
